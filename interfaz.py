@@ -52,10 +52,12 @@ class Aplicacion:
                 messagebox.showinfo("Correcto", "¡Muy bien!")
             else:
                 messagebox.showerror("Incorrecto", f"La respuesta correcta era: {self.pregunta_actual.respuesta}")
-                self.pregunta_actual = self.juego.preguntas.siguiente_pregunta()
-                self.entry_respuesta.delete(0, tk.END)
-                self.lbl_puntaje.config(text=f"Puntaje: {self.juego.puntaje}")
-                self.mostrar_pregunta()
+            
+            # Avanzar a la siguiente pregunta
+            self.pregunta_actual = self.juego.preguntas.siguiente_pregunta()
+            self.entry_respuesta.delete(0, tk.END)
+            self.lbl_puntaje.config(text=f"Puntaje: {self.juego.puntaje}")
+            self.mostrar_pregunta()
         else:
             messagebox.showwarning("Advertencia", "Por favor ingresa un número válido")
 
