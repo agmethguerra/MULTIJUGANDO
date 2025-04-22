@@ -16,6 +16,6 @@ class Juego:
 
     def verificar_respuesta(self, pregunta_nodo, respuesta_usuario):
         if pregunta_nodo and int(respuesta_usuario) == pregunta_nodo.respuesta:
-            self.puntaje += 1
+            self.puntaje += 100
             return True
         return False
